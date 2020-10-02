@@ -1,0 +1,32 @@
+﻿@addTagHelper "*,Microsoft.AspNetCore.Mvc.TagHelpers"
+@model ExploreCaliforniaNow.Models.Post
+@{
+    Layout = "_Layout";
+}
+@section Header{
+    <h1>Explore our world your way</h1>
+    <a href="/tours.htm" title="Find your tour!"><h2>Find your tour</h2></a>Blogpost Title
+}
+
+<section id="mainContent">
+    <h1>Create Blog Post</h1>
+    <fieldset>
+        <form asp-action="create" asp-controller="blog">
+            <div asp-validation-summry="All" class="input-validation-error"></div>
+            <p>
+                <label asp-for="Title"></label>
+                <input asp-for="Title" class="form-control" placeholder="Blog Post Title"/>
+                <span asp-validation-for="Title"></span>
+            </p>
+            <p>
+                <label asp-for="Body"></label>
+                <textarea asp-for="Body" class="form-control" placeholder="Blog Post Content"></textarea>
+                <span asp-validation-for="Body"></span>
+            </p>
+            <p>
+                <button type="submit">Create Post</button>
+            </p>
+        </form>
+    </fieldset>
+
+</section>

@@ -1,0 +1,10 @@
+﻿@inject ExploreCaliforniaNow.Models.FormattingServices DayOfDate
+@model ExploreCaliforniaNow.Models.Post
+
+<section id="mainContent">
+    <article class="blog-post">
+        <h1>@Model.Title</h1>
+        <div class="details">Posted <span>@DayOfDate.ReadableDate(Model.DT)</span> by <span>@Model.Author</span></div>
+        <div class="content">@Model.Body</div>
+    </article>
+</section>
